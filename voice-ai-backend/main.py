@@ -29,9 +29,25 @@ logger = setup_logging()
 app = FastAPI(title="Voice AI Hospital Assistant", version="1.0.0")
 
 # Configure CORS
+default_origins = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "https://voice-ai-doctor-appointment.vercel.app",
+]
+
+allowed_origins_env = os.getenv("ALLOWED_ORIGINS")
+if allowed_origins_env:
+    cors_origins = [
+        origin.strip()
+        for origin in allowed_origins_env.split(",")
+        if origin.strip()
+    ]
+else:
+    cors_origins = default_origins
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://*.vercel.app", "http://localhost:3000", "http://localhost:3001"],
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
