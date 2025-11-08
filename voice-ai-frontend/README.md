@@ -38,22 +38,23 @@ voice-ai-frontend/
 │   │   │   ├── StatusBadge.tsx
 │   │   │   ├── MessageBubble.tsx
 │   │   │   ├── VoiceButton.tsx
-│   │   │   ├── ConnectionButton.tsx
-│   │   │   ├── DoctorCard.tsx
-│   │   │   └── GlassCard.tsx
+│   │   │   └── DoctorCard.tsx
 │   │   ├── ConversationHistory.tsx
 │   │   ├── DoctorsList.tsx
-│   │   ├── VoiceCommands.tsx
-│   │   ├── SystemStatus.tsx
+│   │   ├── ProtectedApp.tsx
 │   │   └── VoiceAssistant.tsx # Main voice interface component
 │   ├── hooks/                 # Custom React hooks
 │   │   ├── useWebSocket.ts
 │   │   ├── useAudioRecording.ts
 │   │   ├── useAudioPlayback.ts
+│   │   ├── useSpeechRecognition.ts
+│   │   ├── useTextToSpeech.ts
 │   │   └── useMessages.ts
 │   ├── utils/                 # Utility functions
 │   │   ├── websocket.ts
-│   │   └── audio.ts
+│   │   ├── audio.ts
+│   │   ├── audioPlayback.ts
+│   │   └── textToSpeech.ts
 │   ├── types/                 # TypeScript type definitions
 │   │   └── index.ts
 │   └── constants/             # Application constants
