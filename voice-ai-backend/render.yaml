@@ -1,9 +1,17 @@
-version: "1"
-build:
-  commands:
-    - pip install -r requirements.txt
-run:
-  command: python main.py
-env:
-  - key: GEMINI_API_KEY
-    sync: false
+services:
+  - type: web
+    name: voice-ai-backend
+    env: python
+    plan: starter
+    autoDeploy: true
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: PORT
+        value: "8000"
+      - key: ALLOWED_ORIGINS
+        value: https://your-frontend-domain.com
+      - key: APP_ACCESS_PASSWORD
+        sync: false

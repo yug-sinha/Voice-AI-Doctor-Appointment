@@ -1,9 +1,5 @@
-import VoiceAssistant from '@/components/VoiceAssistant'
+import ProtectedApp from '@/components/ProtectedApp'
 
 export default function Home() {
-  return (
-    <main className="min-h-screen">
-      <VoiceAssistant />
-    </main>
-  )
+  return <ProtectedApp />
 }
