@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: voice-ai-backend
+    env: python
+    plan: starter
+    autoDeploy: true
+    rootDir: voice-ai-backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: PORT
+        value: "8000"
+
+  - type: web
+    name: voice-ai-frontend
+    env: node
+    plan: starter
+    autoDeploy: true
+    rootDir: voice-ai-frontend
+    buildCommand: npm install
+    startCommand: npm run dev -- --hostname 0.0.0.0 --port $PORT
+    envVars:
+      - key: NEXT_PUBLIC_BACKEND_URL
+        value: wss://voice-ai-backend.onrender.com/voice
