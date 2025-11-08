@@ -1,7 +1,7 @@
 'use client'
 
-import { CSSProperties, useEffect, useRef, useCallback } from 'react'
-import { Activity, Phone, PhoneOff, Waves } from 'lucide-react'
+import { CSSProperties, useEffect, useRef, useCallback, useState } from 'react'
+import { Activity, Info, Phone, PhoneOff, Waves } from 'lucide-react'
 import { VoiceAssistantProps, WebSocketMessage, Message } from '@/types'
 import { useWebSocket } from '@/hooks/useWebSocket'
 import { useAudioRecording } from '@/hooks/useAudioRecording'
@@ -224,6 +224,7 @@ export const VoiceAssistant = ({ backendUrl }: VoiceAssistantProps) => {
   })()
 
   return (
+    <>
     <div className="min-h-screen lg:h-screen bg-slate-950 text-white relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-48 -right-32 w-[540px] h-[540px] bg-emerald-500/20 blur-[220px]" />
@@ -371,6 +372,8 @@ export const VoiceAssistant = ({ backendUrl }: VoiceAssistantProps) => {
         }
       `}</style>
     </div>
+    <InfoBadge />
+    </>
   )
 }
 
@@ -397,6 +400,42 @@ const QuickPhrases = () => {
           </span>
         ))}
       </div>
+    </div>
+  )
+}
+
+const InfoBadge = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <div className="fixed bottom-4 right-4 z-20">
+      <div
+        className={`mb-2 rounded-2xl border border-white/10 bg-slate-900/90 text-white/80 shadow-xl backdrop-blur-lg transition-all ${
+          isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'
+        }`}
+      >
+        <div className="px-4 py-3 space-y-1 text-sm">
+          <p className="font-semibold text-white">Made by Yug</p>
+          <p>Frontend: Vercel</p>
+          <p>Backend: Render</p>
+          <a
+            href="https://github.com/yug-sinha/Voice-AI-Doctor-Appointment"
+            target="_blank"
+            rel="noreferrer"
+            className="text-emerald-300 hover:text-emerald-200 underline text-xs"
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+
+      <button
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-label="About this app"
+        className="w-12 h-12 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white hover:bg-white/20 transition shadow-lg"
+      >
+        <Info className="w-5 h-5" />
+      </button>
     </div>
   )
 }
