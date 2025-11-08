@@ -119,7 +119,7 @@ export const useAudioRecording = (
 
         if (pcmChunk) {
           try {
-            onAudioChunk(pcmChunk.buffer)
+            onAudioChunk(pcmChunk.buffer as ArrayBuffer)
           } catch (error) {
             console.error('Error sending audio chunk:', error)
           }

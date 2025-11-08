@@ -2,7 +2,7 @@
 
 import { CSSProperties, useEffect, useRef, useCallback } from 'react'
 import { Activity, Phone, PhoneOff, Waves } from 'lucide-react'
-import { VoiceAssistantProps, WebSocketMessage } from '@/types'
+import { VoiceAssistantProps, WebSocketMessage, Message } from '@/types'
 import { useWebSocket } from '@/hooks/useWebSocket'
 import { useAudioRecording } from '@/hooks/useAudioRecording'
 import { useAudioPlayback } from '@/hooks/useAudioPlayback'
