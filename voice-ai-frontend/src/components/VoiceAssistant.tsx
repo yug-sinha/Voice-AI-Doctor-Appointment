@@ -225,13 +225,13 @@ export const VoiceAssistant = ({ backendUrl }: VoiceAssistantProps) => {
 
   return (
     <>
-    <div className="min-h-screen lg:h-screen bg-slate-950 text-white relative overflow-hidden">
+    <div className="min-h-screen lg:min-h-screen bg-slate-950 text-white relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-48 -right-32 w-[540px] h-[540px] bg-emerald-500/20 blur-[220px]" />
         <div className="absolute top-1/3 -left-40 w-[480px] h-[480px] bg-cyan-500/10 blur-[200px]" />
       </div>
 
-      <div className="relative z-10 h-full max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex flex-col gap-4 sm:gap-6">
+      <div className="relative z-10 h-full max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex flex-col gap-4 sm:gap-6 overflow-y-auto custom-scrollbar">
         <header className="text-center space-y-3 flex-none">
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/70 text-sm">
             <Activity className="w-4 h-4 text-emerald-300" />
@@ -242,6 +242,10 @@ export const VoiceAssistant = ({ backendUrl }: VoiceAssistantProps) => {
             <p className="text-white/60 max-w-2xl mx-auto text-sm sm:text-base">
               Speak naturally and let our AI receptionist manage bookings, cancellations, and doctor
               availability—all within a single screen.
+            </p>
+            <p className="text-emerald-200/80 text-xs sm:text-sm max-w-2xl mx-auto">
+              If the call button spins for a while, the backend might be waking up from Render&apos;s sleep mode.
+              Give it ~30s and try a hard refresh—your first request already triggered the service to boot.
             </p>
           </div>
         </header>
