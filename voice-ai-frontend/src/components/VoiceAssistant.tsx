@@ -44,6 +44,7 @@ export const VoiceAssistant = ({ backendUrl }: VoiceAssistantProps) => {
     startListening: startSpeechListening,
     stopListening: stopSpeechListening,
     resetTranscript: resetSpeechTranscript,
+    isSupported: isSpeechSupported,
   } = useSpeechRecognition((transcript, isFinal) => {
     if (isFinal && transcript.trim()) {
       addMessage('user', transcript)
