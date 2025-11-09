@@ -4,6 +4,8 @@ import base64
 from typing import Dict, Any
 import asyncio
 
+from mock_db import get_all_doctors
+
 def setup_logging():
     """Setup logging configuration"""
     logging.basicConfig(
@@ -31,9 +33,16 @@ def format_tool_response(tool_name: str, result: Dict[str, Any]) -> str:
     else:
         return result.get("message", f"Sorry, there was an error with {tool_name}.")
 
+def _format_doctor_list() -> str:
+    """Return formatted bullet list of all doctors."""
+    return "\n".join(f"- {doctor}" for doctor in get_all_doctors())
+
+
 def create_system_prompt() -> str:
     """Create the system prompt for the AI assistant"""
-    return """You are a friendly and professional hospital appointment booking assistant. Your role is to help patients book, confirm, and cancel appointments through natural voice conversation.
+    doctor_list = _format_doctor_list()
+
+    return f"""You are a friendly and professional hospital appointment booking assistant. Your role is to help patients book, confirm, and cancel appointments through natural voice conversation.
 
 Key Guidelines:
 1. Always be polite, clear, and helpful
@@ -42,13 +51,11 @@ Key Guidelines:
 4. If a requested time slot is unavailable, proactively suggest alternatives
 5. Keep responses concise but informative
 6. Use the available tools to check doctor availability and manage appointments
-7. If you can't find a doctor by the exact name mentioned, suggest similar names from the available doctors
+7. If you can't find a doctor by the exact name mentioned, call `list_doctors`, suggest the closest matches, and invite the caller to clarify
 8. Always confirm appointment details after booking: doctor name, date, and time
 
-Available doctors in our system:
-- Dr. John Smith (Cardiology)
-- Dr. Sarah Lee (Dermatology) 
-- Dr. Michael Johnson (Orthopedics)
+Available doctors in our system (if a caller mentions someone outside this list, gently suggest the closest match):
+{doctor_list}
 
 Remember: You're having a voice conversation, so keep your responses natural and conversational, as if speaking to someone on the phone."""
 
