@@ -14,65 +14,65 @@ DOCTORS = {
         "doctor_id": "dr_smith",
         "name": "Dr. John Smith",
         "specialty": "Cardiology",
-        "available_slots": _slots_for_day("2025-11-09", 9, 17)
-        + _slots_for_day("2025-11-10", 9, 17)
-        + _slots_for_day("2025-11-11", 9, 17),
+        "available_slots": _slots_for_day("2025-12-11", 9, 17)
+        + _slots_for_day("2025-12-12", 9, 17)
+        + _slots_for_day("2025-12-13", 9, 17),
     },
     "dr_lee": {
         "doctor_id": "dr_lee",
         "name": "Dr. Sarah Lee",
         "specialty": "Dermatology",
-        "available_slots": _slots_for_day("2025-11-09", 10, 18, 2)
-        + _slots_for_day("2025-11-10", 10, 18, 2)
-        + _slots_for_day("2025-11-11", 10, 18, 2),
+        "available_slots": _slots_for_day("2025-12-11", 10, 18, 2)
+        + _slots_for_day("2025-12-12", 10, 18, 2)
+        + _slots_for_day("2025-12-13", 10, 18, 2),
     },
     "dr_johnson": {
         "doctor_id": "dr_johnson",
         "name": "Dr. Michael Johnson",
         "specialty": "Orthopedics",
-        "available_slots": _slots_for_day("2025-11-09", 8, 16)
-        + _slots_for_day("2025-11-10", 8, 16)
-        + _slots_for_day("2025-11-11", 8, 16),
+        "available_slots": _slots_for_day("2025-12-11", 8, 16)
+        + _slots_for_day("2025-12-12", 8, 16)
+        + _slots_for_day("2025-12-13", 8, 16),
     },
     "dr_khan": {
         "doctor_id": "dr_khan",
         "name": "Dr. Aisha Khan",
         "specialty": "Pediatrics",
-        "available_slots": _slots_for_day("2025-11-09", 9, 15, 2)
-        + _slots_for_day("2025-11-10", 9, 15, 2)
-        + _slots_for_day("2025-11-11", 9, 15, 2),
+        "available_slots": _slots_for_day("2025-12-11", 9, 15, 2)
+        + _slots_for_day("2025-12-12", 9, 15, 2)
+        + _slots_for_day("2025-12-13", 9, 15, 2),
     },
     "dr_martinez": {
         "doctor_id": "dr_martinez",
         "name": "Dr. Carlos Martinez",
         "specialty": "Neurology",
-        "available_slots": _slots_for_day("2025-11-09", 11, 19)
-        + _slots_for_day("2025-11-10", 11, 19)
-        + _slots_for_day("2025-11-11", 11, 19),
+        "available_slots": _slots_for_day("2025-12-11", 11, 19)
+        + _slots_for_day("2025-12-12", 11, 19)
+        + _slots_for_day("2025-12-13", 11, 19),
     },
     "dr_oliver": {
         "doctor_id": "dr_oliver",
         "name": "Dr. Emily Oliver",
         "specialty": "Ophthalmology",
-        "available_slots": _slots_for_day("2025-11-09", 10, 14)
-        + _slots_for_day("2025-11-10", 10, 14)
-        + _slots_for_day("2025-11-11", 10, 14),
+        "available_slots": _slots_for_day("2025-12-11", 10, 14)
+        + _slots_for_day("2025-12-12", 10, 14)
+        + _slots_for_day("2025-12-13", 10, 14),
     },
     "dr_brown": {
         "doctor_id": "dr_brown",
         "name": "Dr. Marcus Brown",
         "specialty": "General Surgery",
-        "available_slots": _slots_for_day("2025-11-09", 7, 12)
-        + _slots_for_day("2025-11-10", 7, 12)
-        + _slots_for_day("2025-11-11", 7, 12),
+        "available_slots": _slots_for_day("2025-12-11", 7, 12)
+        + _slots_for_day("2025-12-12", 7, 12)
+        + _slots_for_day("2025-12-13", 7, 12),
     },
     "dr_williams": {
         "doctor_id": "dr_williams",
         "name": "Dr. Priya Williams",
         "specialty": "ENT",
-        "available_slots": _slots_for_day("2025-11-09", 12, 20)
-        + _slots_for_day("2025-11-10", 12, 20)
-        + _slots_for_day("2025-11-11", 12, 20),
+        "available_slots": _slots_for_day("2025-12-11", 12, 20)
+        + _slots_for_day("2025-12-12", 12, 20)
+        + _slots_for_day("2025-12-13", 12, 20),
     },
 }
 
